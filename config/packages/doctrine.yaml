@@ -1,0 +1,28 @@
+doctrine:
+    dbal:
+        dbname:               DbConference
+        host:                 localhost
+        port:                 3306
+        user:                 nema
+        password:             nema
+        driver:               pdo_mysql
+        # if the url option is specified, it will override the above config
+        url:                  mysql://nema@127.0.0.1:3306/DbConference
+        # the DBAL driverClass option
+        driver_class:         App\DBAL\MyDatabaseDriver
+      
+                
+       
+       
+         
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity'
+                prefix: 'App\Entity'
+                alias: App
